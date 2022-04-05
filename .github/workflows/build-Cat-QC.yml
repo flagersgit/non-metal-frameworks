@@ -1,7 +1,7 @@
 name: CI - Catalina QC Build
 
 env:
-  USE_CAT_QC
+  USE_CAT_QC: "true"
 
 on:
   push:
@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download Binaries
-        run: Dependencies.tool
+        run: ./Dependencies.tool
       - name: Build Binaries (Mojave QC)
-        run: Build.tool
+        run: ./Build.tool
       - run: zip -r CatalinaQC.zip ./Build/Wrapped
       - name: Upload Zip to Artifacts
         uses: actions/upload-artifact@v2
