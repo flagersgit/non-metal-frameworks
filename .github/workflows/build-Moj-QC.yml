@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Mojave QC Build
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
       - name: Download Binaries
